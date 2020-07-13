@@ -26,7 +26,12 @@ class OffreRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'adresse' => 'required',
+            'superficie' => 'required',
+            'prix' => 'required',
+            'capacite' => 'required',
+            'privilege' => 'required',
+            'imgPath' => 'required'
         ];
     }
 
@@ -50,7 +55,12 @@ class OffreRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'adresse.required' => 'Adresse est obligatoire',
+            'superficie.required' => 'Superficie est obligatoire',
+            'prix.required' => 'Prix est obligatoire',
+            'capacite.required' => 'Capacité est obligatoire',
+            'privilege.required' => 'les privilèges sont obligatoires',
+            'imgPath.required' => 'les photos de logements sont obligatoires' 
         ];
     }
 }

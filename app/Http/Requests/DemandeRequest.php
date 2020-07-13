@@ -26,7 +26,9 @@ class DemandeRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'coordonnees' => 'required',
+            'budMax' => 'required',
+            'comments' => 'required'
         ];
     }
 
@@ -50,7 +52,9 @@ class DemandeRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'coordonnees.required' => 'Les coordonnées sont obligatoire',
+            'budMax.required' => 'Budget max est obligatoire',
+            'comments.required' => 'commentaire est obligatoire'
         ];
     }
 }
