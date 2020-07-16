@@ -31,6 +31,8 @@ class OffreRequest extends FormRequest
             'prix' => 'required',
             'capacite' => 'required',
             'privilege' => 'required',
+            'typlog' => 'required',
+            'des' => 'required',
             'imgPath' => 'required'
         ];
     }
@@ -56,6 +58,8 @@ class OffreRequest extends FormRequest
     {
         return [
             'adresse.required' => 'Adresse est obligatoire',
+            'typlog.required' => 'Type de logement est obligatoire',
+            'des.required' => 'Description est obligatoire',
             'superficie.required' => 'Superficie est obligatoire',
             'prix.required' => 'Prix est obligatoire',
             'capacite.required' => 'Capacité est obligatoire',

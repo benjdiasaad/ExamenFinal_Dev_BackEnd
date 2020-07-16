@@ -21,20 +21,24 @@ Route::get('/blog', function () {
     return view('template.blog');
 });
 
-Route::get('/index', function () {
-    return view('template.index');
-});
+Route::get('/index',"OffreController@index")->name('template.index');
 
 Route::get('/detail', function () {
     return view('template.blog-details');
 });
-
+/*
 Route::get('/product', function () {
     return view('template.product');
-});
+});*/
+
+Route::get('/product/{typlog}', 'OffreController@show')->name('template.product');
 
 Route::get('/shop', function () {
     return view('template.shop');
+});
+
+Route::get('/product', function () {
+    return view('template.product');
 });
 
 Route::get('/contact', function () {

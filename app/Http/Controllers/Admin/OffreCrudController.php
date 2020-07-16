@@ -57,7 +57,12 @@ class OffreCrudController extends CrudController
             'type' => 'text',
             'label' => 'Les privilèges'
         ];
-        $this->crud->addColumns([$f1, $f2, $f3, $f4,$f5]);
+
+        $f6 = [
+            'label' => "Type de Logement",
+            'name' => 'typlog','type' => 'text'
+        ];
+        $this->crud->addColumns([$f1, $f6, $f3, $f4,$f5,$f2]);
     }
 
     public function setupCreateOperation()
@@ -65,15 +70,24 @@ class OffreCrudController extends CrudController
         $this->crud->setValidation(OffreRequest::class);
         
         $this->crud->addField([
+            'label' => "Type de Logement",
+            'name' => 'typlog','type' => 'text']);
+
+        $this->crud->addField([
             'label' => "Adresse de logement",
             'name' => 'adresse','type' => 'address_algolia']);
         
         $this->crud->addField( [
             'label' => "La superficé",
             'name' => 'superficie','type' => 'number']);
+        
         $this->crud->addField( [
             'label' => "Prix",
             'name' => 'prix','type' => 'number']);
+
+        $this->crud->addField([
+            'label' => "Description",
+            'name' => 'des','type' => 'text']);    
         $this->crud->addField([
             'label' => "La capacité",
             'name' => 'capacite','type' => 'number']);

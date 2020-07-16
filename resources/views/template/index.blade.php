@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student | Coloco</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/st.png') }}">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -143,29 +142,13 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All departments</span>
-                        <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li  class="active"><a href="{{ url('/index') }}">Home</a></li>
-                        <li><a href="{{ url('/shop') }}">Shop</a></li>
-                        <li><a href="{{ url('/blog') }}">Blog</a></li>
+                        <li class="active"><a href="{{ url('/index') }}">Liste offres</a></li>
+                        <li><a href="{{ url('/blog') }}">Liste demandes</a></li>
+                        <li><a href="{{ url('/shop') }}">Créer offre</a></li>
+                        <li><a href="{{ url('/detail') }}">Créer demande</a> </li>
                         <li><a href="{{ url('contact') }}">Contact</a></li>
-                        <li><a href="{{ url('/detail') }}">Pages</a> </li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -180,80 +163,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>From The Blog</h2>
+                        <h2>Liste des Offres</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+            @foreach($offre as $offres)
+                
+               <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
-                        <img src="{{asset('img/latest-1.jpg') }}" alt="">
+                        <img src="{{ $offres->imgPath }}" alt="">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
                                     <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
+                                    {{ $offres->created_at }}
                                 </div>
                             </div>
-                            <a href="#">
-                                <h4>The Best Street Style From London Fashion Week</h4>
+                            <a href="{{ url('product', $offres->typlog) }}">
+                                <h4>{{ $offres->typlog }}</h4>
                             </a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <p>{{ $offres->des }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="{{asset('img/latest-2.jpg') }}" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h4>
-                            </a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="{{asset('img/latest-3.jpg') }}" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4>How To Brighten Your Wardrobe With A Dash Of Lime</h4>
-                            </a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach   
+                
             </div>
             
-        </div>
-    </section>
-    <!-- Latest Blog Section End -->
-
    
 
     <!-- Js Plugins -->

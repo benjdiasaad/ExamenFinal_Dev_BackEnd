@@ -142,29 +142,13 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All departments</span>
-                        <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="{{ url('/index') }}">Home</a></li>
-                        <li><a href="{{ url('/shop') }}">Shop</a></li>
-                        <li><a href="{{ url('/blog') }}">Blog</a></li>
+                        <li><a href="{{ url('/index') }}">Liste offres</a></li>
+                        <li><a href="{{ url('/blog') }}">Liste demandes</a></li>
+                        <li><a href="{{ url('/shop') }}">Créer offre</a></li>
+                        <li><a href="{{ url('/detail') }}">Créer demande</a> </li>
                         <li class="active"><a href="{{ url('contact') }}">Contact</a></li>
-                        <li><a href="{{ url('/detail') }}">Pages</a> </li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
