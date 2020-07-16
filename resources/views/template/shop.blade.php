@@ -34,18 +34,9 @@
     <header class="header-section">
         <div class="header-top">
             <div class="container">
-                <div class="ht-left">
-                    <div class="mail-service">
-                        <i class=" fa fa-envelope"></i>
-                        hello.colorlib@gmail.com
-                    </div>
-                    <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +65 11.188.888
-                    </div>
-                </div>
+                       @include('partials.authe') 
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                        @include('partials.auth') 
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="{{asset('img/flag-1.jpg') }}" data-imagecss="flag yt"
@@ -53,12 +44,6 @@
                             <option value='yu' data-image="{{asset('img/flag-2.jpg') }}" data-imagecss="flag yu"
                                 data-title="Bangladesh">German </option>
                         </select>
-                    </div>
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
                     </div>
                 </div>
             </div>
@@ -158,119 +143,59 @@
     <!-- Header End -->
 
     <!-- Latest Blog Section Begin -->
-    <section class="latest-blog spad">
+    <div class="register-login-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>From The Blog</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="{{asset('img/latest-1.jpg') }}" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="register-form">
+                        <h2>Ajouter Offre</h2>
+                        <form action="{{ route('template.offree') }}" method="POST">
+                            @csrf
+                            <div class="group-input">
+                                <label for="typ">Type de Logement : </label>
+                                <input type="text" id="typ" name="typ">
                             </div>
-                            <a href="#">
-                                <h4>The Best Street Style From London Fashion Week</h4>
-                            </a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="{{asset('img/latest-2.jpg') }}" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
+                            <div class="group-input">
+                                <label for="des">Description : </label>
+                                <input type="text" id="des" name="des">
                             </div>
-                            <a href="#">
-                                <h4>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h4>
-                            </a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="{{asset('img/latest-3.jpg') }}" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    May 4,2019
-                                </div>
-                                <div class="tag-item">
-                                    <i class="fa fa-comment-o"></i>
-                                    5
-                                </div>
+                            <div class="group-input">
+                                <label for="addr">Adresse de logement : </label>
+                                <input type="text" id="addr" name="addr">
                             </div>
-                            <a href="#">
-                                <h4>How To Brighten Your Wardrobe With A Dash Of Lime</h4>
-                            </a>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="benefit-items">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="single-benefit">
-                            <div class="sb-icon">
-                                <img src="{{asset('img/icon-1.png') }}" alt="">
+
+                            <div class="group-input">
+                                <label for="prix">Prix : </label>
+                                <input type="text" id="prix" name="prix">
                             </div>
-                            <div class="sb-text">
-                                <h6>Free Shipping</h6>
-                                <p>For all order over 99$</p>
+
+                            <div class="group-input">
+                                <label for="cpt">Capacité : </label>
+                                <input type="text" id="cpt" name="cpt">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="single-benefit">
-                            <div class="sb-icon">
-                                <img src="{{asset('img/icon-2.png') }}" alt="">
+
+                            <div class="group-input">
+                                <label for="spc">Superficie : </label>
+                                <input type="text" id="spc" name="spc">
                             </div>
-                            <div class="sb-text">
-                                <h6>Delivery On Time</h6>
-                                <p>If good have prolems</p>
+
+                            <div class="group-input">
+                                <label for="prv">Les privilèges : </label>
+                                <input type="text" id="prv" name="prv">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="single-benefit">
-                            <div class="sb-icon">
-                                <img src="{{asset('img/icon-1.png') }}" alt="">
+
+                            <div class="group-input">
+                                <label for="img">Photo de logement :  </label>
+                                <input type="text" id="img" name="img">
                             </div>
-                            <div class="sb-text">
-                                <h6>Secure Payment</h6>
-                                <p>100% secure payment</p>
-                            </div>
-                        </div>
+
+                            <button type="submit" class="site-btn register-btn">AJouter Offre</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!-- Latest Blog Section End -->
 
    

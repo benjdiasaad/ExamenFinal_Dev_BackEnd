@@ -21,18 +21,23 @@ Route::get('/blog',"DemandeController@demand")->name('template.blog');
 
 Route::get('/index',"OffreController@index")->name('template.index');
 
-Route::get('/detail', function () {
-    return view('template.blog-details');
-});
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/detail', function () {
+        return view('template.blog-details');
+    });
+    Route::post('/demande','DemandeController@store')->name('template.demande');
+    Route::post('/offree','OffreController@storage')->name('template.offree');
+    Route::get('/shop', function () {
+        return view('template.shop');
+    });
+});
 
 Route::get('/details/{coordonnees}', 'DemandeController@demande')->name('template.details');
 
 Route::get('/product/{typlog}', 'OffreController@show')->name('template.product');
 
-Route::get('/shop', function () {
-    return view('template.shop');
-});
+
 
 
 Route::get('/contact', function () {

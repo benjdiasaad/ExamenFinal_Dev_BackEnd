@@ -18,5 +18,17 @@ class DemandeController extends Controller
          $demande = Demande::where('coordonnees', $coordonnees)->firstOrFail();
          return view('template.details')->with('demande', $demande);
      } 
+     public function store(Request $request)
+       {
+
+        $message = \App\Models\Demande::create([
+            'coordonnees' => $request->coord,
+            'budMax' => $request->max,
+            'comments' => $request->comm
+        ]);
+    
+
+        return redirect()->route('template.index')->with('success', 'votre Demande bien envoyé');
+       }
      
 }

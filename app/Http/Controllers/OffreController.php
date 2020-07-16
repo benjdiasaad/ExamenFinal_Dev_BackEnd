@@ -19,4 +19,23 @@ class OffreController extends Controller
         return view('template.product')->with('offre', $offre);
     }
 
+    public function storage(Request $request)
+       {
+
+        $message = \App\Models\Offre::create([
+            'typlog' => $request->typ,
+            'des' => $request->des,
+            'adresse' => $request->addr,
+            'prix' => $request->prix,
+            'capacite' => $request->cpt,
+            'privilege' => $request->prv,
+            'superficie' => $request->spc,
+            'imgPath' => $request->img
+            
+        ]);
+    
+
+        return redirect()->route('template.index')->with('success', 'votre offre a été bien envoyé');
+       }
+
 }
