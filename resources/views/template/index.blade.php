@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student | Coloco</title>
-
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/st.png') }}">
+    
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -36,7 +37,14 @@
             <div class="container">
                        @include('partials.authe') 
                 <div class="ht-right">
-                        @include('partials.auth') 
+                        @guest
+                           
+                        @if (Route::has('register'))
+                             <a href="{{ route('register') }}" class="login-panel"><i class="fa fa-user"></i> {{ __('Login') }} </a>
+                        @endif
+                        @else
+                            <a href="{{ url('/profile') }}" class="login-panel"><i class="fa fa-user"></i> {{ Auth::user()->name }} </a>
+                        @endguest
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="{{asset('img/flag-1.jpg') }}" data-imagecss="flag yt"

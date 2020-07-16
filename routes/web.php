@@ -44,6 +44,10 @@ Route::get('/contact', function () {
     return view('template.contact');
 });
 
+Route::get('/profile', function () {
+    return view('template.profile');
+});
+
 
 Auth::routes();
 
