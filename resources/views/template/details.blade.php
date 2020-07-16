@@ -3,10 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Fashi Template">
-    <meta name="keywords" content="Fashi, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student | Coloco</title>
 
     <!-- Google Font -->
@@ -142,10 +138,11 @@
         </div>
         <div class="nav-item">
             <div class="container">
+              
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li><a href="{{ url('/index') }}">Liste offres</a></li>
-                        <li class="active"><a href="{{ url('/blog') }}">Liste demandes</a></li>
+                        <li><a href="{{ url('/blog') }}">Liste demandes</a></li>
                         <li><a href="{{ url('/shop') }}">Créer offre</a></li>
                         <li><a href="{{ url('/detail') }}">Créer demande</a> </li>
                         <li><a href="{{ url('contact') }}">Contact</a></li>
@@ -157,40 +154,41 @@
     </header>
     <!-- Header End -->
 
-    <!-- Latest Blog Section Begin -->
-    <section class="latest-blog spad">
+    
+    <section class="contact-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Liste de Demandes</h2>
+                <div class="col-lg-5">
+                    <div class="contact-title">
+                        <h4>Les Coordonnées</h4>
+                        <p>{{ $demande->coordonnees }}.</p>
+                    </div>
+                    <div class="contact-widget">
+                        
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-money"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Budget max :</span>
+                                <p>{{ $demande->budMax }} DH</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cw-item">
+                            <div class="ci-icon">
+                                <i class="ti-hand-point-up"></i>
+                            </div>
+                            <div class="ci-text">
+                                <span>Commentaire :</span>
+                                <p>{{ $demande->comments}} </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-            
-            @foreach($demande as $demandes)
-               <div class="col-lg-4 col-md-6">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    {{ $demandes->created_at }}
-                                </div>
-                            </div>
-                            <a href="{{ url('details', $demandes->coordonnees) }}">
-                                <h4>{{ $demandes->coordonnees }}</h4>
-                            </a>
-                            <p style="font-size:16px;">{{ $demandes->budMax }} DH</p>
-                        </div>
-                </div>
-                @endforeach   
-                
-            </div>
-            
-    <!-- Latest Blog Section End -->
-
-   
+        </div>
+    </section>
 
     <!-- Js Plugins -->
     <script src="{{asset('js/jquery-3.3.1.min.js') }}"></script>

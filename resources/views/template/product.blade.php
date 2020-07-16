@@ -187,7 +187,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Prix :</span>
-                                <p>{{ $offre->prix }}</p>
+                                <p>{{ $offre->prix }} DH</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -196,7 +196,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Superficé :</span>
-                                <p>{{ $offre->superficie }}</p>
+                                <p>{{ $offre->superficie }} Mètres carrés</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -205,14 +205,14 @@
                             </div>
                             <div class="ci-text">
                                 <span>Capacité :</span>
-                                <p>{{ $offre->cpacite}}</p>
+                                <p>{{ $offre->capacite}} Personnes</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 offset-lg-1">
-                  <div class="col-md-6">
-                            <img src="{{ $offre->imgPath }}" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
+                <div class="col-lg-6" style="padding: 200px 0 120px;">
+                  <div class="col-md-9">
+                            <img src="{{ $offre->imgPath }}" style="width: 590px;height: 300px;margin-left:170px;" class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s" alt="">
                   </div>
                 </div>
             </div>
