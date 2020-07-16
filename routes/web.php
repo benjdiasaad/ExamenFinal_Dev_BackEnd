@@ -39,3 +39,7 @@ Route::get('/contact', function () {
     return view('template.contact');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
