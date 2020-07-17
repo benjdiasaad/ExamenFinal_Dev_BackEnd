@@ -1,7 +1,8 @@
-
-<form action="{{ route('template.search') }}" class="d-flex mr-3" style="margin-left:910px;">
-    <div class="form-group mb-0 mr-1">
-        <input type="text" name="q" class="form-control" value="{{ request()->q ?? '' }}">
-    </div>
-    <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
-</form>
+                   <div class="col-lg-7 col-md-7">
+                        <div class="advanced-search">
+                        <form class="example" action="{{ route('template.search') }}">
+                        <input type="text" placeholder="Search.." name="q" value="{{ request()->q ?? '' }}">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                        </div>
+                   </div>

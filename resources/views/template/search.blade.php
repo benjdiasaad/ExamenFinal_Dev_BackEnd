@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -148,49 +149,26 @@ form.example::after {
           {{ session('success') }}
     </div>
     @endif
-
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-  @endif
-
-  @if (count($errors) > 0)
-      <div class="alert alert-danger">
-        <ul class="mb-0 mt-0">
-          @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-  @endif
     <!-- Latest Blog Section Begin -->
     <section class="latest-blog spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Liste des Offres</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-            @foreach($offre as $offres)
+            @foreach($offres as $offre)
                 
                <div class="col-lg-4 col-md-6">
                     <div class="single-latest-blog">
-                        <img src="{{ $offres->imgPath }}" alt="">
+                        <img src="{{ $offre->imgPath }}" alt="">
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
                                     <i class="fa fa-calendar-o"></i>
-                                    {{ $offres->created_at }}
+                                    {{ $offre->created_at }}
                                 </div>
                             </div>
-                            <a href="{{ url('product', $offres->adresse) }}">
-                                <h4>{{ $offres->typlog }}</h4>
+                            <a href="{{ url('product', $offre->adresse) }}">
+                                <h4>{{ $offre->typlog }}</h4>
                             </a>
-                            <p>{{ $offres->des }}</p>
+                            <p>{{ $offre->des }}</p>
                         </div>
                     </div>
                 </div>

@@ -33,9 +33,11 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
+Route::get('/search', 'OffreController@search')->name('template.search');
+
 Route::get('/details/{coordonnees}', 'DemandeController@demande')->name('template.details');
 
-Route::get('/product/{typlog}', 'OffreController@show')->name('template.product');
+Route::get('/product/{adresse}', 'OffreController@show')->name('template.product');
 
 
 

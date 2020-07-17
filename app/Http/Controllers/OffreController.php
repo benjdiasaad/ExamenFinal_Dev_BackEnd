@@ -13,9 +13,9 @@ class OffreController extends Controller
        return view('template.index')->with('offre', $offre);  
     }
 
-    public function show($typlog)
+    public function show($adresse)
     {
-        $offre = Offre::where('typlog', $typlog)->firstOrFail();
+        $offre = Offre::where('adresse', $adresse)->firstOrFail();
         return view('template.product')->with('offre', $offre);
     }
 
@@ -37,5 +37,20 @@ class OffreController extends Controller
 
         return redirect()->route('template.index')->with('success', 'votre offre a été bien envoyé');
        }
+
+       public function search()
+    {
+        
+        request()->validate([
+            'q' => 'required|min:3'
+        ]);
+       
+        $q = request()->input('q');
+        
+        $offres = Offre::where('adresse', 'like', "%$q%")
+                ->paginate(6);
+
+          return view('template.search')->with('offres', $offres);
+    }
 
 }

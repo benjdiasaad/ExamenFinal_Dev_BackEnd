@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Fashi Template">
+    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student | Coloco</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/st.png') }}">
-
-
+    
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -20,8 +22,47 @@
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
-</head>
+    <style>
+* {
+  box-sizing: border-box;
+}
 
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #C70759;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+    </style>
+</head>
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -62,14 +103,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search">
-                            <div class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                    @include('partials.search') 
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
                             <li class="heart-icon">
@@ -83,46 +117,6 @@
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="{{asset('img/select-product-1.jpg') }}" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="{{asset('img/select-product-2.jpg') }}" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
-                                </div>
                             </li>
                         </ul>
                     </div>
