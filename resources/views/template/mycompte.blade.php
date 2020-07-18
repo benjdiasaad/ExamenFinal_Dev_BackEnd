@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -78,14 +77,13 @@ form.example::after {
             <div class="container">
                        @include('partials.authe') 
                 <div class="ht-right">
-                        @guest
-                           
-                        @if (Route::has('register'))
-                             <a href="{{ route('register') }}" class="login-panel"><i class="fa fa-user"></i> {{ __('Login') }} </a>
-                        @endif
-                        @else
-                            <a href="{{ url('/profile') }}" class="login-panel"><i class="fa fa-user"></i> {{ Auth::user()->name }} </a>
-                        @endguest
+                          @guest
+                           @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="login-panel"><i class="fa fa-user"></i> {{ __('Login') }} </a>
+                           @endif
+                           @else
+                               <a href="{{ url('/profile') }}" class="login-panel"><i class="fa fa-user"></i> {{ Auth::user()->name }} </a>
+                           @endguest  
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="{{asset('img/flag-1.jpg') }}" data-imagecss="flag yt"
@@ -129,9 +127,10 @@ form.example::after {
         </div>
         <div class="nav-item">
             <div class="container">
+              
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{{ url('/index') }}">Liste offres</a></li>
+                        <li><a href="{{ url('/index') }}">Liste offres</a></li>
                         <li><a href="{{ url('/blog') }}">Liste demandes</a></li>
                         <li><a href="{{ url('/shop') }}">Créer offre</a></li>
                         <li><a href="{{ url('/detail') }}">Créer demande</a> </li>
@@ -142,43 +141,22 @@ form.example::after {
             </div>
         </div>
     </header>
-    <br>
     <!-- Header End -->
-
-    
-    <div style="margin-left:100px;">
-    @if (request()->input('q'))
-    <h6>{{ $offres->total() }} résultat(s) pour la recherche "{{ request()->q }}"</h6>
-    @endif
-    </div>
-    <!-- Latest Blog Section Begin -->
-    <section class="latest-blog spad">
+    <section class="contact-section spad">
         <div class="container">
-            <div class="row">
-            @foreach($offres as $offre)
-                
-               <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-blog">
-                        <img src="{{ $offre->imgPath }}" alt="">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    {{ $offre->created_at }}
-                                </div>
-                            </div>
-                            <a href="{{ url('product', $offre->adresse) }}">
-                                <h4>{{ $offre->typlog }}</h4>
-                            </a>
-                            <p>{{ $offre->des }}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach   
-                
-            </div>
-            
-   
+            <h3> Mon Compte </h4>
+        </div>
+        <br> <br> <BR>
+        <div class="container">
+            <h4 style="margin-left:380px;"> Nom : {{ Auth::user()->name }}  </h4> <BR>
+            <h4 style="margin-left:380px;"> Prenom : {{ Auth::user()->prenom }}  </h4> <BR>
+            <h4 style="margin-left:380px;"> Email  : {{ Auth::user()->email }}  </h4> <BR>
+            <h4 style="margin-left:380px;"> Numèro de téléphone : {{ Auth::user()->tel }}  </h4> <BR>
+            <h4 style="margin-left:380px;"> Adresse : {{ Auth::user()->adresse }}  </h4> <BR>
+            <h4 style="margin-left:380px;"> Date de naissance : {{ Auth::user()->date_naiss}}  </h4> <BR>
+        </div>
+    </section>
+    
 
     <!-- Js Plugins -->
     <script src="{{asset('js/jquery-3.3.1.min.js') }}"></script>

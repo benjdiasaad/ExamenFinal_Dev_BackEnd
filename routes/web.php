@@ -46,6 +46,10 @@ Route::get('/contact', function () {
     return view('template.contact');
 });
 
+Route::get('/mycompte', function () {
+    return view('template.mycompte');
+});
+
 Route::get('/profile', function () {
     return view('template.profile');
 });

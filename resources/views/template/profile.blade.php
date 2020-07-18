@@ -145,7 +145,7 @@ form.example::after {
     <section class="contact-section spad">
         <div class="container">
             <h3> Compte </h4>
-            <h4> {{ Auth::user()->name }} {{Auth::user()->prenom}}, {{Auth::user()->email}}, <a href="#"> aller au profil </a>
+            <h4> {{ Auth::user()->name }} {{Auth::user()->prenom}}, {{Auth::user()->email}}, <a href="{{ ('mycompte') }}"> aller au profil </a>
         </div>
     </section>
     <section class="latest-blog spad">
@@ -156,15 +156,16 @@ form.example::after {
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Infos Personnells
+                                    <i class="fa fa-address-book-o"></i>
+                                    <br> <br> <h4> Infos Personnelles </h4>
                                 </div>
                             </div>
-                            <a href="#">
-                                <h4> 
+                            <br>
+                            <a href="{{ ('mycompte') }}">
+                                <h5> 
                                     Fournissez des enseignements personnels et indiquez comment nous prouvons
                                     vous joindre
-                                </h4>
+                                </h5>
                             </a>
                         </div>
                  </div>
@@ -172,94 +173,24 @@ form.example::after {
                         <div class="latest-text">
                             <div class="tag-list">
                                 <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Infos Personnells
+                                    <i class="fa fa-universal-access"></i>
+                                    <br>
+                                     <br> <h4> Connexion et Sécurité </h4>
                                 </div>
                             </div>
+                            <br>
                             <a href="#">
-                                <h4> 
-                                    Fournissez des enseignements personnels et indiquez comment nous prouvons
-                                    vous joindre
-                                </h4>
+                                <h5> 
+                                    Mettez à jour votre mot de passe et scurisez votre compte
+                                </h5>
                             </a>
                         </div>
                  </div>
-                 <div class="col-lg-4 col-md-6">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Infos Personnells
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4> 
-                                    Fournissez des enseignements personnels et indiquez comment nous prouvons
-                                    vous joindre
-                                </h4>
-                            </a>
-                        </div>
-                 </div>
+                
                 </div>
             </div>
         </section> 
-        <section class="latest-blog spad">
-            <div class="container">      
-                <div class="row">
-                 <div class="col-lg-4 col-md-6">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Infos Personnells
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4> 
-                                    Fournissez des enseignements personnels et indiquez comment nous prouvons
-                                    vous joindre
-                                </h4>
-                            </a>
-                        </div>
-                 </div>
-                 
-                 <div class="col-lg-4 col-md-6">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Infos Personnells
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4> 
-                                    Fournissez des enseignements personnels et indiquez comment nous prouvons
-                                    vous joindre
-                                </h4>
-                            </a>
-                        </div>
-                 </div>
-                 <div class="col-lg-4 col-md-6">
-                        <div class="latest-text">
-                            <div class="tag-list">
-                                <div class="tag-item">
-                                    <i class="fa fa-calendar-o"></i>
-                                    Infos Personnells
-                                </div>
-                            </div>
-                            <a href="#">
-                                <h4> 
-                                    Fournissez des enseignements personnels et indiquez comment nous prouvons
-                                    vous joindre
-                                </h4>
-                            </a>
-                        </div>
-                 </div>
-            </div>
-      </section>
-            
-     
-
+        
     <!-- Js Plugins -->
     <script src="{{asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{asset('js/bootstrap.min.js') }}"></script>

@@ -38,7 +38,7 @@ class OffreController extends Controller
         return redirect()->route('template.index')->with('success', 'votre offre a été bien envoyé');
        }
 
-       public function search()
+    public function search()
     {
         
         request()->validate([
